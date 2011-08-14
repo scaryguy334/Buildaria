@@ -2383,6 +2383,7 @@ namespace Buildaria
                 i[31].SetDefaults("Band of Starpower");
                 i[32].SetDefaults("Nature's Gift");
                 i[38].SetDefaults("Whoopie Cushion");
+                i[39].SetDefaults("Spike");
 
                 // Equipment
                 i[44].SetDefaults("Mining Helmet");
