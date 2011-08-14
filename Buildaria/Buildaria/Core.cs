@@ -1020,7 +1020,7 @@ namespace Buildaria
                             it.stack = 1;
 
                         }
-                        else if (it.name == "Band Of Regeneration")
+                        else if (it.name == "Band of Regeneration")
                         {
                             it.stack = 1;
 
