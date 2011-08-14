@@ -334,6 +334,927 @@ namespace Buildaria
 
                 #endregion
 
+                #region Change Unstackables to 1
+                {
+
+                    for (int i = 0; i < player[myPlayer].inventory.Length; i++)
+                    {
+                        Item it = player[myPlayer].inventory[i];
+
+                        //uncomment to override all stacks and set as 255
+                        // if (it.name != "Magic Mirror")
+                        // {
+                        //     it.stack = 255;
+                        // }
+
+
+                        #region Unstackable Armor
+
+                        #region Head Armor
+                        if (it.name == "Copper Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Iron Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Meteor Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Shadow Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Necro Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Jungle Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Molten Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Mining Helmet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        #endregion
+
+                        #region Body Armor
+                        else if (it.name == "Copper Chainmail")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        else if (it.name == "Iron Chainmail")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        else if (it.name == "Silver Chainmail")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        else if (it.name == "Gold Chainmail")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        else if (it.name == "Meteor Suit")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        else if (it.name == "Shadow Scalemail")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        else if (it.name == "Necro Breastplate")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        else if (it.name == "Jungle Shirt")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        else if (it.name == "Molten Breastplate")
+                        {
+                            it.stack = 1;
+
+                        }
+                        #endregion
+
+                        #region Leg Armor
+
+                        else if (it.name == "Copper Greaves")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Iron Greaves")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Greaves")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Greaves")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Meteor Leggings")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Shadow Greaves")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Necro Greaves")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Jungle Pants")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Molten Greaves")
+                        {
+                            it.stack = 1;
+
+                        }
+                        #endregion
+                        #endregion
+
+                        #region Unstackable Weapons Tools
+
+                        #region Guns Bows Boomerangs Flails Spears
+
+                        else if (it.name == "Blowpipe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Flintlock Pistol")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Musket")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Handgun")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Minishark")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Space Gun")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Phoenix Blaster")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Sandgun")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Star Cannon")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Harpoon")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Ball O' Hurt")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Blue Moon")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Sunfury")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Spear")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Trident")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Dark Lance")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Wooden Boomerang")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Enchanted Boomerang")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Flamarang")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Thorn Chakram")
+                        {
+                            it.stack = 1;
+                        }
+                        else if (it.name == "Wooden Bow")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Copper Bow")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Iron Bow")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Bow")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Bow")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Demon Bow")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Molten Fury")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        #endregion
+
+                        #region Wands Books Swords
+
+                        else if (it.name == "Flower of Fire")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Vilethorn")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Magic Missile")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Flamelash")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Water Bolt")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Demon Scythe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Aqua Scepter")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Night's Edge")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Light's Bane")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Starfury")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Staff of Regrowth")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Wooden Sword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Copper Shortsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Copper Broadsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Iron Shortsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Iron Broadsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Shortsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Broadsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Shortsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Broadsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Muramasa")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Blade of Grass")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Fiery Greatsword")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "White Phaseblade")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Blue Phaseblade")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Red Phaseblade")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Green Phaseblade")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Purple Phaseblade")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Yellow Phaseblade")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        #endregion
+
+                        #region Tools
+
+                        else if (it.name == "Copper Pickaxe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Iron Pickaxe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Pickaxe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Pickaxe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Nightmare Pickaxe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Copper Axe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Iron Axe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Axe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Axe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "War Axe of the Night")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Meteor Hamaxe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Molten Hamaxe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Wooden Hammer")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Copper Hammer")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Iron Hammer")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Hammer")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Hammer")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "The Breaker")
+                        {
+                            it.stack = 1;
+
+                        }
+                        
+                        #endregion
+
+                        #endregion
+
+                        #region Unstackable Accessories Vanity Summons Keys Misc
+
+                        #region Accessories / Other
+
+                        else if (it.name == "Ivy Whip")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Grappling Hook")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Dirt Rod")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Cobalt Shield")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Feral Claws")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Obsidian Skull")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Shackle")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Empty Bucket")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Guide Voodoo Doll")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Anklet of the Wind")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Cloud in a Bottle")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Flipper")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Hermes Boots")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Lucky Horseshoe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Rocket Boots")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Red Balloon")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Aglet")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Depth Meter")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Copper Watch")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Silver Watch")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Watch")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Orb of Light")
+                        {
+                            it.stack = 1;
+                        }
+                        else if (it.name == "Magic Mirror")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Breathing Reed")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Band Of Regeneration")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Band of Starpower")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Nature's Gift")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Whoopie Cushion")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        #endregion
+
+                        #region Vanity
+
+                        else if (it.name == "Goggles")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Sunglasses")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Jungle Rose")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Fish Bowl")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Robe")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Mime Mask")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Aqua Scepter")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Night's Edge")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Bunny Hood")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Red Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Robot Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Archaeologist's Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Plumber's Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Top Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Familiar Wig")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Summer Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Ninja Hood")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Hero's Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Archaeologist's Jacket")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Plumber's Shirt")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Tuxedo Shirt")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Familiar Shirt")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "The Doctor's Shirt")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Ninja Shirt")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Hero's Shirt")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Archaeologist's Pants")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Plumber's Pants")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Tuxedo Pants")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Familiar Pants")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "The Doctor's Pants")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Ninja Pants")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Hero's Pants")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        #endregion
+
+                        #region Summons Keys Misc
+
+                        else if (it.name == "Suspicious Looking Eye")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Worm Food")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Goblin Battle Standard")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Angel Statue")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Shadow Key")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Lava Bucket")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Water Bucket")
+                        {
+                            it.stack = 1;
+
+                        }
+
+                        #endregion
+
+                        #endregion
+                    }
+
+
+                }
+                #endregion
+
                 #region Save/Load Inventories File
 
                 if (ctrl && shift && keyState.IsKeyDown(Keys.S) && oldKeyState.IsKeyUp(Keys.S))
