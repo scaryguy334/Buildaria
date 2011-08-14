@@ -976,7 +976,7 @@ namespace Buildaria
                             it.stack = 1;
 
                         }
-                        else if (it.name == "Red Balloon")
+                        else if (it.name == "Shiny Red Balloon")
                         {
                             it.stack = 1;
 
@@ -1131,6 +1131,11 @@ namespace Buildaria
 
                         }
                         else if (it.name == "Hero's Hat")
+                        {
+                            it.stack = 1;
+
+                        }
+                        else if (it.name == "Gold Crown")
                         {
                             it.stack = 1;
 
