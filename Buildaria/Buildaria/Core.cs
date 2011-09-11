@@ -160,8 +160,7 @@ namespace Buildaria
                             player[myPlayer].inventory[i].UpdateItem(0);
                         }
                         else if (it.name != "Magic Mirror") // Prevent Magic Mirror being hax'd, which prevents it from working.
-                        {
-                            it.SetDefaults(it.type);
+                        {                            
                             if (it.name != "")
                             {
                                 #region Unstackable Items
@@ -171,6 +170,36 @@ namespace Buildaria
 
                                 // You can allow the stacking of normally non-stackable items by setting the below boolean to true.
                                 bool allowStacking = false;
+                                                                                        
+                                //items that have nonstandard functionality if on autoattack or with fast useTime
+                                //used to semi-fix the items so testing can be done with them.
+                                ArrayList noreuse = new ArrayList(new string[] {
+                                #region Noreuse items
+                                "Spear",
+                                "Trident",
+                                "Dark Lance",
+
+                                "Dirt Rod",
+                                "Grappling Hook",
+                                "Ivy Whip",
+
+                                "Wooden Boomerang",
+                                "Enchanted Boomerang",
+                                "Thorn Chakram",
+                                "Flamarang",
+
+                                "Wooden Bow",
+                                "Copper Bow",
+                                "Iron Bow",
+                                "Silver Bow",
+                                "Gold Bow",
+                                "Demon Bow",
+                                "Molten Fury",
+
+                                #endregion 
+                                });
+    
+    
 
                                 ArrayList usItems = new ArrayList(new string[] {
                                 #region Armor
@@ -413,6 +442,12 @@ namespace Buildaria
                                 {
                                     it.autoReuse = true;
                                     it.useTime = 0;
+                                 
+                                    if (noreuse.Contains(it.name))
+                                    {
+                                        it.autoReuse = false; 
+                                        it.useTime = 30;
+                                    }
                                 }
                                 if (it.hammer > 0 || it.axe > 0)
                                 {
@@ -1526,7 +1561,7 @@ namespace Buildaria
             }
             #endregion
 
-            #region Armor
+            #region Armor and Tools
             {
                 Item[] i = new Item[53];
 
@@ -1537,7 +1572,19 @@ namespace Buildaria
 
                 // Row 1
                 i[0].SetDefaults("Ivy Whip");
-
+                
+               
+                i[1].SetDefaults("Iron Pickaxe");
+                i[2].SetDefaults("Silver Pickaxe");
+                i[3].SetDefaults("Gold Pickaxe");
+                i[4].SetDefaults("Nightmare Pickaxe");
+                i[5].SetDefaults("Molten Pickaxe");
+                i[6].SetDefaults("Wooden Hammer");
+                i[7].SetDefaults("Iron Hammer");
+                i[8].SetDefaults("Silver Hammer");
+                i[9].SetDefaults("Gold Hammer");
+                
+                
                 // Row 2
                 i[11].SetDefaults("Copper Helmet");
                 i[12].SetDefaults("Iron Helmet");
@@ -1550,6 +1597,7 @@ namespace Buildaria
                 i[19].SetDefaults("Molten Helmet");
 
                 // Row 3
+                i[20].SetDefaults("Copper Pickaxe");
                 i[21].SetDefaults("Copper Chainmail");
                 i[22].SetDefaults("Iron Chainmail");
                 i[23].SetDefaults("Silver Chainmail");
