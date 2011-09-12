@@ -718,7 +718,7 @@ namespace Buildaria
                 }
                 else
                 {
-
+                    player[myPlayer].respawnTimer = 1;
                 }
 
                 #endregion
