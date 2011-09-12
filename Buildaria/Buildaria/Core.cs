@@ -809,8 +809,7 @@ namespace Buildaria
                     if (!editSign)
                     {
                         if (keyState.IsKeyDown(Keys.OemOpenBrackets) && !oldKeyState.IsKeyDown(Keys.OemOpenBrackets) && !editSign)
-                        {
-                            SaveInventory(inventoryType);
+                        {                            
                             /*for (int i = 0; i < Inventories[inventoryType].Length; i++)
                             {
                                 player[myPlayer].inventory[i].SetDefaults(Inventories[inventoryType][i].type);
@@ -818,8 +817,7 @@ namespace Buildaria
                             LoadInventory(inventoryType - 1);
                         }
                         if (keyState.IsKeyDown(Keys.OemCloseBrackets) && !oldKeyState.IsKeyDown(Keys.OemCloseBrackets) && !editSign)
-                        {
-                            SaveInventory(inventoryType);
+                        {                           
                             /*for (int i = 0; i < Inventories[inventoryType].Length; i++)
                             {
                                 player[myPlayer].inventory[i].SetDefaults(Inventories[inventoryType][i].type);
@@ -1529,7 +1527,91 @@ namespace Buildaria
         public static void CreateInventories()
         {
             // i[10] is now the trash slot. DO NOT place an item there, it will get overwritten and will cause you frustration!!
+            #region Personal
+            {
+                Item[] i = new Item[56];
 
+                for (int it = 0; it < i.Length; it++)
+                {
+                    i[it] = new Item();
+                }
+
+                // Row 1
+                i[0].SetDefaults("Copper Pickaxe");
+                i[1].SetDefaults("Copper Hammer");
+                i[2].SetDefaults("Blue Phaseblade");
+                i[2].useStyle = 0;
+
+                i[3].SetDefaults("Wood");
+                i[4].SetDefaults("Hellstone");
+                i[5].SetDefaults("Stone Wall");
+                i[6].SetDefaults("Wooden Door");
+                i[7].SetDefaults("Lava Bucket");
+                i[8].SetDefaults("Copper Chandelier");
+                i[9].SetDefaults("Piggy Bank");
+
+                // Row 2
+                i[11].SetDefaults("Hellfire Arrow");
+                i[12].SetDefaults("Ironskin Potion");
+                i[13].SetDefaults("Healing Potion");
+                i[14].SetDefaults("Spike");
+                i[15].SetDefaults("Obsidian Brick Wall");
+                i[16].SetDefaults("Sign");
+                i[17].SetDefaults("Water Bucket");
+                i[18].SetDefaults("Chain Lantern");
+                i[19].SetDefaults("Wooden Platform");
+
+                // Row 3
+                i[20].SetDefaults("Harpoon");
+                i[21].SetDefaults("Coral");
+                i[22].SetDefaults("Sand Block");
+                i[23].SetDefaults("Magic Mirror");
+                i[24].SetDefaults("Obsidian");
+                i[25].SetDefaults("Gold Brick Wall");
+                i[26].SetDefaults("Bed");
+                i[27].SetDefaults("Empty Bucket");
+                i[28].SetDefaults("Skull Lantern");
+                i[29].SetDefaults("Mining Helmet");
+
+                // Row 4
+                i[30].SetDefaults("Band of Regeneration");
+                i[31].SetDefaults("Cloud in a Bottle");
+                i[32].SetDefaults("Silver Ore");
+                i[33].SetDefaults("Gold Ore");
+                i[34].SetDefaults("Grass Seeds");
+                i[35].SetDefaults("Jungle Grass Seeds");
+                i[36].SetDefaults("Mushroom Grass Seeds");
+                i[37].SetDefaults("Corrupt Seeds");
+                i[38].SetDefaults("Tiki Torch");
+                i[39].SetDefaults("Guide Voodoo Doll");
+
+                // Equipment
+                i[44].SetDefaults("Gold Helmet");
+                i[45].SetDefaults("Robe");
+
+                // Accessories
+                i[47].SetDefaults("Cloud in a Bottle");
+                i[48].SetDefaults("Band of Regeneration");
+                i[49].SetDefaults("Rocket Boots");
+                i[50].SetDefaults("Guide Voodoo Doll");
+                i[51].SetDefaults("Hermes Boots");
+
+                i[52].SetDefaults("Gold Helmet");
+                i[53].SetDefaults("Jungle Shirt");
+                i[54].SetDefaults("Silver Greaves");
+
+                Inventory inv = new Inventory(i, "Personal");
+
+                inv.ItemHax = true;
+                inv.GodMode = true;
+                inv.NPCs = false;
+                inv.BuildMode = true;
+                inv.ItemDrops = true;
+
+                Inventory.AddInventory(inv);
+            }
+            #endregion
+            
             #region Blank
             {
                 Item[] i = new Item[56];
@@ -1542,12 +1624,7 @@ namespace Buildaria
                 i[1].SetDefaults("Copper Hammer");
                 i[2].SetDefaults("Blue Phaseblade");
                 i[2].useStyle = 0;
-                i[4].SetDefaults("Ivy Whip");
-                
-                //vanity slots
-                i[52].SetDefaults("Gold Helmet");
-                i[53].SetDefaults("Jungle Shirt");
-                i[54].SetDefaults("Silver Greaves");
+                i[4].SetDefaults("Ivy Whip");                            
 
                 Inventory inv = new Inventory(i, "Blank");
 
@@ -1844,6 +1921,10 @@ namespace Buildaria
                 i[49].SetDefaults("Rocket Boots");
                 i[50].SetDefaults("Lucky Horseshoe");
                 i[51].SetDefaults("Hermes Boots");
+                
+                i[52].SetDefaults("Molten Helmet");
+                i[53].SetDefaults("Molten Breastplate");
+                i[54].SetDefaults("Molten Greaves");
 
                 Inventory inv = new Inventory(i, "Misc + Accessories");
 
@@ -1991,6 +2072,10 @@ namespace Buildaria
                 i[49].SetDefaults("Rocket Boots");
                 i[50].SetDefaults("Lucky Horseshoe");
                 i[51].SetDefaults("Hermes Boots");
+                
+                i[52].SetDefaults("Shadow Helmet");
+                i[53].SetDefaults("Shadow Scalemail");
+                i[54].SetDefaults("Shadow Greaves");
 
                 Inventory inv = new Inventory(i, "Consumables");
 
@@ -2385,6 +2470,10 @@ namespace Buildaria
                 i[49].SetDefaults("Rocket Boots");
                 i[50].SetDefaults("Lucky Horseshoe");
                 i[51].SetDefaults("Hermes Boots");
+                
+                i[52].SetDefaults("Silver Helmet");
+                i[53].SetDefaults("Silver Chainmail");
+                i[54].SetDefaults("Silver Greaves");
 
                 Inventory inv = new Inventory(i, "Walls");
 
@@ -2465,6 +2554,10 @@ namespace Buildaria
                 i[49].SetDefaults("Rocket Boots");
                 i[50].SetDefaults("Lucky Horseshoe");
                 i[51].SetDefaults("Hermes Boots");
+                
+                i[52].SetDefaults("Copper Helmet");
+                i[53].SetDefaults("Copper Chainmail");
+                i[54].SetDefaults("Copper Greaves");
 
                 Inventory inv = new Inventory(i, "Building Items");
 
