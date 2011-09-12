@@ -725,7 +725,7 @@ namespace Buildaria
 
                 #region Set Default Spawn Location
 
-                if (ctrl && keyState.IsKeyDown(Keys.S) && oldKeyState.IsKeyUp(Keys.S) && !editSign)
+                if (ctrl && keyState.IsKeyDown(Keys.L) && oldKeyState.IsKeyUp(Keys.L) && !editSign)
                 {
                     int x = (int)((Main.mouseState.X + Main.screenPosition.X) / 16f);
                     int y = (int)((Main.mouseState.Y + Main.screenPosition.Y) / 16f);
