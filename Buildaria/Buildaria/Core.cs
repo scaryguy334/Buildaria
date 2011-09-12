@@ -68,12 +68,7 @@ namespace Buildaria
         Tile[,] Undo = new Tile[1, 1];
 
         #endregion
-
-        #region buildMode
-
-
-        #endregion
-
+        
         #region Various Private Fields
 
         int inventoryType = 0;
@@ -1537,7 +1532,7 @@ namespace Buildaria
 
             #region Blank
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -1548,6 +1543,11 @@ namespace Buildaria
                 i[2].SetDefaults("Blue Phaseblade");
                 i[2].useStyle = 0;
                 i[4].SetDefaults("Ivy Whip");
+                
+                //vanity slots
+                i[52].SetDefaults("Gold Helmet");
+                i[53].SetDefaults("Jungle Shirt");
+                i[54].SetDefaults("Silver Greaves");
 
                 Inventory inv = new Inventory(i, "Blank");
 
@@ -1563,7 +1563,7 @@ namespace Buildaria
 
             #region Armor and Tools
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -1643,7 +1643,7 @@ namespace Buildaria
 
             #region Weapons (throwable, explosive, flails, spears, bows, guns)
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -1720,7 +1720,7 @@ namespace Buildaria
 
             #region Weapons (magic, melee)
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -1791,7 +1791,7 @@ namespace Buildaria
 
             #region Accessories / Other
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -1859,7 +1859,7 @@ namespace Buildaria
 
             #region Vanity Items
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -1930,7 +1930,7 @@ namespace Buildaria
 
             #region Consumables
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -2006,7 +2006,7 @@ namespace Buildaria
 
             #region Materials
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -2086,7 +2086,7 @@ namespace Buildaria
 
             #region Ammo / Unknown
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -2150,7 +2150,7 @@ namespace Buildaria
 
             #region Alchemy
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -2209,7 +2209,7 @@ namespace Buildaria
 
             #region Decor (minus lighting and storage)
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -2279,7 +2279,7 @@ namespace Buildaria
                 inv.GodMode = true;
                 inv.NPCs = false;
                 inv.BuildMode = true;
-                inv.ItemDrops = false;
+                inv.ItemDrops = true;
 
                 Inventory.AddInventory(inv);
             }
@@ -2287,7 +2287,7 @@ namespace Buildaria
 
             #region Decor (lighting & storage)
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -2340,7 +2340,7 @@ namespace Buildaria
                 inv.GodMode = true;
                 inv.NPCs = false;
                 inv.BuildMode = true;
-                inv.ItemDrops = false;
+                inv.ItemDrops = true;
 
                 Inventory.AddInventory(inv);
             }
@@ -2348,7 +2348,7 @@ namespace Buildaria
 
             #region Walls
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -2392,7 +2392,7 @@ namespace Buildaria
                 inv.GodMode = true;
                 inv.NPCs = false;
                 inv.BuildMode = true;
-                inv.ItemDrops = false;
+                inv.ItemDrops = true;
 
                 Inventory.AddInventory(inv);
             }
@@ -2400,7 +2400,7 @@ namespace Buildaria
 
             #region Building Items
             {
-                Item[] i = new Item[53];
+                Item[] i = new Item[56];
 
                 for (int it = 0; it < i.Length; it++)
                 {
@@ -2472,7 +2472,7 @@ namespace Buildaria
                 inv.GodMode = true;
                 inv.NPCs = false;
                 inv.BuildMode = true;
-                inv.ItemDrops = false;
+                inv.ItemDrops = true;
 
                 Inventory.AddInventory(inv);
             }
@@ -2502,8 +2502,11 @@ namespace Buildaria
                 }
                 else
                 {
+                    if ( i < 55 )
+                    {
                     player[myPlayer].armor[i - 44].SetDefaults(0);
                     player[myPlayer].armor[i - 44].SetDefaults(items[i].name);
+                    }
                 }
             }
 
@@ -2543,8 +2546,11 @@ namespace Buildaria
                 }
                 else
                 {
+                    if (i < 55 )
+                    {
                     Inventory.Inventories[id].Items[i].ID = player[myPlayer].armor[i - 44].type;
                     Inventory.Inventories[id].Items[i].Name = player[myPlayer].armor[i - 44].name;
+                    }
                 }
             }
 
