@@ -622,7 +622,7 @@ namespace Buildaria
 
                 #region Display Chat Messages
 
-                if (keyState.IsKeyDown(Keys.K) && oldKeyState.IsKeyUp(Keys.K))
+                if (keyState.IsKeyDown(Keys.K) && oldKeyState.IsKeyUp(Keys.K) && !editSign)
                 {
                     displayMessages = !displayMessages;
 
