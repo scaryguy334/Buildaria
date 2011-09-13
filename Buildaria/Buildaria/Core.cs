@@ -155,21 +155,22 @@ namespace Buildaria
                             player[myPlayer].inventory[i].UpdateItem(0);
                         }
                         else if (it.name != "Magic Mirror") // Prevent Magic Mirror being hax'd, which prevents it from working.
-                        {                            
-                            if (it.name != "")
-                            {
-                                #region Unstackable Items
+                        {                                                                                                  
 
-                                // The 1.0.6 patch added in right-click to equip functionaility that has killed unstacking
-                                // normally non-stackable items. Since it is pointless to stack the below items at all, let's not.
-
-                                // You can allow the stacking of normally non-stackable items by setting the below boolean to true.
-                                bool allowStacking = false;
-                                                                                        
+                               it.stack = 9999;
+                               
+                                //change unstackables to being stackable with a limit of 10 held
+                               if (it.maxStack == 1)
+                               {
+                                   it.maxStack = 10;
+                               }
+                                                                          
                                 //items that have nonstandard functionality if on autoattack or with fast useTime
                                 //used to semi-fix the items so testing can be done with them.
-                                ArrayList noreuse = new ArrayList(new string[] {
                                 #region Noreuse items
+                                
+                                ArrayList noreuse = new ArrayList(new string[] {
+                                
                                 "Spear",
                                 "Trident",
                                 "Dark Lance",
@@ -190,248 +191,11 @@ namespace Buildaria
                                 "Gold Bow",
                                 "Demon Bow",
                                 "Molten Fury",
-
-                                #endregion 
+                                
                                 });
     
-    
-
-                                ArrayList usItems = new ArrayList(new string[] {
-                                #region Armor
-
-                                "Copper Helmet",
-                                "Iron Helmet",
-                                "Silver Helmet",
-                                "Gold Helmet",
-                                "Meteor Helmet",
-                                "Shadow Helmet",
-                                "Necro Helmet",
-                                "Jungle Hat",
-                                "Molten Helmet",
-
-                                "Copper Chainmail",
-                                "Iron Chainmail",
-                                "Silver Chainmail",
-                                "Gold Chainmail",
-                                "Meteor Suit",
-                                "Shadow Scalemail",
-                                "Necro Breastplate",
-                                "Jungle Shirt",
-                                "Molten Breastplate",
-
-                                "Copper Greaves",
-                                "Iron Greaves",
-                                "Silver Greaves",
-                                "Gold Greaves",
-                                "Meteor Leggings",
-                                "Shadow Greaves",
-                                "Necro Greaves",
-                                "Jungle Pants",
-                                "Molten Greaves",
-
-                                #endregion
-
-                                #region Weapons & Tools
-
-                                "Blowpipe",
-                                "Flintlock Pistol",
-                                "Musket",
-                                "Handgun",
-                                "Minishark",
-                                "Space Gun",
-                                "Phoenix Blaster",
-                                "Sandgun",
-                                "Star Cannon",
-
-                                "Wooden Boomerang",
-                                "Enchanted Boomerang",
-                                "Thorn Chakram",
-                                "Flamarang",
-
-                                "Wooden Bow",
-                                "Copper Bow",
-                                "Iron Bow",
-                                "Silver Bow",
-                                "Gold Bow",
-                                "Demon Bow",
-                                "Molten Fury",
-
-                                "Flower of Fire",
-                                "Vilethorn",
-                                "Magic Missile",
-                                "Flamelash",
-                                "Water Bolt",
-                                "Demon Scythe",
-                                "Aqua Scepter",
-
-                                "Harpoon",
-                                "Ball O' Hurt",
-                                "Blue Moon",
-                                "Sunfury",
-
-                                "Spear",
-                                "Trident",
-                                "Dark Lance",
-
-                                "Night's Edge",
-                                "Light's Bane",
-                                "Starfury",
-                                "Staff of Regrowth",
-                                "The Breaker",
-                                "War Axe of the Night",
-
-                                "Wooden Sword",
-                                "Copper Shortsword",
-                                "Copper Broadsword",
-                                "Iron Shortsword",
-                                "Iron Broadsword",
-                                "Silver Shortsword",
-                                "Silver Broadsword",
-                                "Gold Shortsword",
-                                "Gold Broadsword",
-                                "Muramasa",
-                                "Blade of Grass",
-                                "Fiery Greatsword",
-                                "White Phaseblade",
-                                "Blue Phaseblade",
-                                "Red Phaseblade",
-                                "Purple Phaseblade",
-                                "Green Phaseblade",
-                                "Yellow Phaseblade",
-
-                                "Copper Pickaxe",
-                                "Iron Pickaxe",
-                                "Silver Pickaxe",
-                                "Gold Pickaxe",
-                                "Nightmare Pickaxe",
-                                "Molten Pickaxe",
-
-                                "Copper Axe",
-                                "Iron Axe",
-                                "Silver Axe",
-                                "Gold Axe",
-
-                                "Wooden Hammer",
-                                "Copper Hammer",
-                                "Iron Hammer",
-                                "Silver Hammer",
-                                "Gold Hammer",
-
-                                "Meteor Hamaxe",
-                                "Molten Hamaxe",
-
-                                "Dirt Rod",
-                                "Grappling Hook",
-                                "Ivy Whip",
-
-                                #endregion
-
-                                #region Accessories & Other
-
-                                "Cobalt Shield",
-                                "Feral Claws",
-                                "Obsidian Skull",
-                                "Shackle",
-                                "Anklet of the Wind",
-                                "Cloud in a Bottle",
-                                "Flipper",
-                                "Hermes Boots",
-                                "Lucky Horseshoe",
-                                "Rocket Boots",
-                                "Shiny Red Balloon",
-                                "Aglet",
-                                "Band of Regeneration",
-                                "Band of Starpower",
-                                "Nature's Gift",
-                                "Breathing Reed",
-                                "Empty Bucket",
-                                "Water Bucket",
-                                "Lava Bucket",
-
-                                "Copper Watch",
-                                "Silver Watch",
-                                "Gold Watch",
-                                "Depth Meter",
-
-                                "Orb of Light",
-                                "Guide Voodoo Doll",
-                                "Whoopie Cushion",
-
-                                "Mining Helmet",
-
-                                #endregion
-
-                                #region Vanity Items
-
-                                "Goggles",
-                                "Sunglasses",
-                                "Jungle Rose",
-                                "Fish Bowl",
-                                "Mime Mask",
-                                "Bunny Hood",
-                                "Red Hat",
-                                "Robot Hat",
-                                "Summer Hat",
-                                "Gold Crown",
-
-                                "Robe",
-
-                                "Archaeologist's Hat",
-                                "Archaeologist's Jacket",
-                                "Archaeologist's Pants",
-
-                                "Plumber's Hat",
-                                "Plumber's Shirt",
-                                "Plumber's Pants",
-
-                                "Top Hat",
-                                "Tuxedo Shirt",
-                                "Tuxedo Pants",
-
-                                "Familiar Wig",
-                                "Familiar Shirt",
-                                "Familiar Pants",
-
-                                "The Doctor's Shirt",
-                                "The Doctor's Pants",
-
-                                "Ninja Hood",
-                                "Ninja Shirt",
-                                "Ninja Pants",
-
-                                "Hero's Hat",
-                                "Hero's Shirt",
-                                "Hero's Pants",
-
-                                #endregion
-
-                                #region Unknown
-
-                                "Shadow Key",
-                                "Goblin Battle Standard",
-                                "Suspicious Looking Eye",
-                                "Worm Food"
-
-                                #endregion
-                                });
-
-                                #endregion
-
-                                if (allowStacking)
-                                {
-                                    it.stack = 255;
-                                }
-                                else
-                                {
-                                    if (usItems.Contains(it.name))
-                                    {
-                                        it.stack = 1;
-                                    }
-                                    else
-                                    {
-                                        it.stack = 255;
-                                    }
-                                }
+                                #endregion                                     
+                                                             
 
                                 if (itemHax)
                                 {
@@ -451,7 +215,7 @@ namespace Buildaria
                                 }
                                 if (it.pick > 0)
                                     it.pick = 100;
-                            }
+                            
                         }
                         else
                         {
