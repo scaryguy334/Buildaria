@@ -156,7 +156,7 @@ namespace Buildaria
                         }
                         else if (it.name != "Magic Mirror") // Prevent Magic Mirror being hax'd, which prevents it from working.
                         {                                                                                                  
-
+#region Stack sizes
                                it.stack = 9999;
                                
                                 //change unstackables to being stackable with a limit of 10 held
@@ -164,7 +164,35 @@ namespace Buildaria
                                {
                                    it.maxStack = 10;
                                }                                                                     
+                                         #endregion
                                          
+                                         #region custom blocks
+                            if (it.name == "Sapphire")
+                            {
+                                it.createTile = 63;
+                            }
+                            if (it.name == "Ruby")
+                            {
+                                it.createTile = 64;
+                            }
+                            if (it.name == "Emerald")
+                            {
+                                it.createTile = 65;
+                            }
+                            if (it.name == "Topaz")
+                            {
+                                it.createTile = 66;
+                            }
+                            if (it.name == "Amethyst")
+                            {
+                                it.createTile = 67;
+                            }
+                            if (it.name == "Diamond")
+                            {
+                                it.createTile = 68;
+                            }
+                           
+                            #endregion
 
                                 if (itemHax)
                                 {
