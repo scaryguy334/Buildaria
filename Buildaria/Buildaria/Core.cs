@@ -168,10 +168,20 @@ namespace Buildaria
 
                                 if (itemHax)
                                 {
-                                    if (it.name.Contains("axe") || it.name.Contains("Hammer") || it.useTime <= 10)
+                                    if (it.name.Contains("axe") || it.name.Contains("Hammer") || it.useTime == 10 || it.useTime == 7 || it.name.Contains("Blue Phaseblade"))
                                     {
                                         it.useTime = 0;
                                         it.autoReuse = true;
+                                        
+                                        if (it.hammer > 0 || it.axe > 0)
+                                        {
+                                            it.hammer = 300;
+                                            it.axe = 300;
+                                        }
+                                        if (it.pick > 0)
+                                        {
+                                            it.pick = 300;
+                                        }
                                     }
                                  
                                    
@@ -179,21 +189,25 @@ namespace Buildaria
                                 
                                  if (!itemHax)
                                  {
-                                     if (it.name.Contains("axe") || it.name.Contains("Hammer") || it.useTime <= 10)
+                                     if (it.name.Contains("axe") || it.name.Contains("Hammer") || it.useTime == 0)
                                      {
-                                         it.useTime = 20;
+                                         it.useTime = 10;
                                          it.autoReuse = true;
+                                         
+                                         if (it.hammer > 0 || it.axe > 0)
+                                         {
+                                             it.hammer = 70;
+                                             it.axe = 80;
+                                             }
+                                             if (it.pick > 0)
+                                             {
+                                                 it.pick = 300;
+                                             }
                                      }                                    
                                  }
                                 
                                 
-                                if (it.hammer > 0 || it.axe > 0)
-                                {
-                                    it.hammer = 100;
-                                    it.axe = 100;
-                                }
-                                if (it.pick > 0)
-                                    it.pick = 100;
+                                
                             
                         }
                         else
