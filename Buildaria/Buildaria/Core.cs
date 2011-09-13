@@ -149,10 +149,10 @@ namespace Buildaria
 
                         if (i == 10)
                         {
-                            player[myPlayer].inventory[10].SetDefaults(0);
-                            player[myPlayer].inventory[10].name = "";
-                            player[myPlayer].inventory[10].stack = 0;
-                            player[myPlayer].inventory[10].UpdateItem(0);
+                            player[myPlayer].inventory[i].SetDefaults(0);
+                            player[myPlayer].inventory[i].name = "";
+                            player[myPlayer].inventory[i].stack = 0;
+                            player[myPlayer].inventory[i].UpdateItem(0);
                         }
                         else if (it.name != "Magic Mirror") // Prevent Magic Mirror being hax'd, which prevents it from working.
                         {                                                                                                  
