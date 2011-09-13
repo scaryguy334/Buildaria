@@ -134,7 +134,7 @@ namespace Buildaria
         {
             #region buildMode + Item Hax
 
-            if (buildMode && itemHax)
+            if (buildMode)
             {
                 try
                 {
@@ -149,10 +149,10 @@ namespace Buildaria
 
                         if (i == 10)
                         {
-                            player[myPlayer].inventory[i].SetDefaults(0);
-                            player[myPlayer].inventory[i].name = "";
-                            player[myPlayer].inventory[i].stack = 0;
-                            player[myPlayer].inventory[i].UpdateItem(0);
+                            player[myPlayer].inventory[10].SetDefaults(0);
+                            player[myPlayer].inventory[10].name = "";
+                            player[myPlayer].inventory[10].stack = 0;
+                            player[myPlayer].inventory[10].UpdateItem(0);
                         }
                         else if (it.name != "Magic Mirror") // Prevent Magic Mirror being hax'd, which prevents it from working.
                         {                                                                                                  
@@ -163,51 +163,30 @@ namespace Buildaria
                                if (it.maxStack == 1)
                                {
                                    it.maxStack = 10;
-                               }
-                                                                          
-                                //items that have nonstandard functionality if on autoattack or with fast useTime
-                                //used to semi-fix the items so testing can be done with them.
-                                #region Noreuse items
-                                
-                                ArrayList noreuse = new ArrayList(new string[] {
-                                
-                                "Spear",
-                                "Trident",
-                                "Dark Lance",
-
-                                "Dirt Rod",
-                                "Grappling Hook",
-                                "Ivy Whip",
-
-                                "Wooden Boomerang",
-                                "Enchanted Boomerang",
-                                "Thorn Chakram",
-                                "Flamarang",
-
-                                "Wooden Bow",
-                                "Copper Bow",
-                                "Iron Bow",
-                                "Silver Bow",
-                                "Gold Bow",
-                                "Demon Bow",
-                                "Molten Fury",
-                                
-                                });
-    
-                                #endregion                                     
-                                                             
+                               }                                                                     
+                                         
 
                                 if (itemHax)
                                 {
-                                    it.autoReuse = true;
-                                    it.useTime = 0;
-                                 
-                                    if (noreuse.Contains(it.name))
+                                    if (it.name.Contains("axe") || it.name.Contains("Hammer") || it.useTime <= 10)
                                     {
-                                        it.autoReuse = false; 
-                                        it.useTime = 30;
+                                        it.useTime = 0;
+                                        it.autoReuse = true;
                                     }
+                                 
+                                   
                                 }
+                                
+                                 if (!itemHax)
+                                 {
+                                     if (it.name.Contains("axe") || it.name.Contains("Hammer") || it.useTime <= 10)
+                                     {
+                                         it.useTime = 20;
+                                         it.autoReuse = true;
+                                     }                                    
+                                 }
+                                
+                                
                                 if (it.hammer > 0 || it.axe > 0)
                                 {
                                     it.hammer = 100;
@@ -531,7 +510,7 @@ namespace Buildaria
 
                     #region Place Anywhere
 
-                    if (mouseState.LeftButton == ButtonState.Pressed && player[myPlayer].inventory[player[myPlayer].selectedItem].createTile >= 0 && itemHax && allowStuff)
+                    if (mouseState.LeftButton == ButtonState.Pressed && player[myPlayer].inventory[player[myPlayer].selectedItem].createTile >= 0 && allowStuff)
                     {
                         int x = (int)((Main.mouseState.X + Main.screenPosition.X) / 16f);
                         int y = (int)((Main.mouseState.Y + Main.screenPosition.Y) / 16f);
