@@ -165,31 +165,29 @@ namespace Buildaria
                                    it.maxStack = 10;
                                }                                                                     
                                          #endregion
-                                         
-                                         #region custom blocks
-                            if (it.name == "Sapphire")
+                                         //Place gemstones
+                                         #region Place gemstones
+                            int[] cuitems;
+                            string[] cuitname;
+
+                            cuitems = new int[6] { 63, 64, 65, 66, 67, 68 };
+                            cuitname = new string[6]    
                             {
-                                it.createTile = 63;
-                            }
-                            if (it.name == "Ruby")
+                                "Sapphire",
+                                "Ruby",
+                                "Emerald",
+                                "Topaz",
+                                "Amethyst",
+                                "Diamond",
+                            };
+                            for (int j = 0; j < cuitname.Length; j++)
                             {
-                                it.createTile = 64;
-                            }
-                            if (it.name == "Emerald")
-                            {
-                                it.createTile = 65;
-                            }
-                            if (it.name == "Topaz")
-                            {
-                                it.createTile = 66;
-                            }
-                            if (it.name == "Amethyst")
-                            {
-                                it.createTile = 67;
-                            }
-                            if (it.name == "Diamond")
-                            {
-                                it.createTile = 68;
+                                if (cuitname[j] == it.name)
+                                {
+                                    it.useTime = 0;
+                                    it.createTile = cuitems[j];
+                                }
+
                             }
                            
                             #endregion
@@ -568,7 +566,7 @@ namespace Buildaria
                             SquareWallFrame(x, y, true);
                         }
                     }
-                    else if (mouseState.LeftButton == ButtonState.Pressed && player[myPlayer].inventory[player[myPlayer].selectedItem].createWall >= 0 && itemHax && allowStuff)
+                    else if (mouseState.LeftButton == ButtonState.Pressed && player[myPlayer].inventory[player[myPlayer].selectedItem].createWall >= 0 && allowStuff)
                     {
                         int x = (int)((Main.mouseState.X + Main.screenPosition.X) / 16f);
                         int y = (int)((Main.mouseState.Y + Main.screenPosition.Y) / 16f);
